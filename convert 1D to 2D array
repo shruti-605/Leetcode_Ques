@@ -1,0 +1,16 @@
+class Solution {
+    public int[][] construct2DArray(int[] original, int m, int n) {
+        if(original.length!=m*n)
+        return new int[0][0];
+        int [][] res=new int[m][n];//matrix
+        int i=0,j=0;//index
+        for(int num:original){//extended array orginal se ek ek lekr aayega num ke rkhega
+            res[i][j++]=num;
+            if(j>=n){
+                j=0;
+                i++;
+            }
+        }
+        return res;
+    }
+}
