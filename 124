@@ -1,0 +1,14 @@
+int find(TreeNode* node, int &ans){
+    if(!node) return 0;
+    int l = find(node->left, ans);
+    int r = find(node->right, ans);
+    ans = max(ans, node->val + l + r);
+    return max(0, node->val + max(l, r));
+}
+    int maxPathSum(TreeNode* root) {
+        if(!root) return 0;
+        int ans = INT_MIN;
+        int val = find(root, ans);
+        return ans;
+    }
+};
