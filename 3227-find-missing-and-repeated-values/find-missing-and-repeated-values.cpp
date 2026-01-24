@@ -10,7 +10,7 @@ public:
         }
         int missing =-1, repeated=-1;
         for(int num=1;num<=n*n;num++){
-            if(freq[num]==2){
+            if(freq[num]>1){
                 repeated=num;
             }else if(freq[num]==0){
                 missing= num;
