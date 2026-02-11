@@ -20,16 +20,16 @@ public:
 
 class Solution {
 public:
-    void bfs(Node* root,vector<int>&ans){
+    void dfs(Node* root,vector<int>&ans){
         if(!root)return;
         for(Node* child:root->children){
-            bfs(child,ans);
+            dfs(child,ans);
         }
         ans.push_back(root->val);
     }
     vector<int> postorder(Node* root) {
         vector<int>ans;
-        bfs(root,ans);
+        dfs(root,ans);
         return ans;
     }
 };
