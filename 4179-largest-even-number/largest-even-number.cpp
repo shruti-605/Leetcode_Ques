@@ -1,0 +1,16 @@
+class Solution {
+public:
+    string largestEven(string s) {
+        int n=s.size();
+        string ans="";
+        for(int i=n-1;i>=0;i--){
+            if((s[i]-'0')%2==0){
+                ans=s.substr(0,i+1);
+                    break;
+                
+            }
+        }
+         if(ans.empty())return "";
+            return ans;
+    }
+};
