@@ -8,19 +8,17 @@ public:
 
         for(int right=0;right<n;right++){
             sum+=nums[right];
-
-            while(sum>=target){
-                minlen=min(minlen,right-left+1);
-                sum-=nums[left];
-                left++;
-            }
+        
+        while(sum>=target){
+            minlen=min(minlen,right-left+1);
+            sum-=nums[left];
+            left++;
+        }
         }
         if(minlen==INT_MAX){
             return 0;
-        }
-        else{
+        }else{
             return minlen;
         }
-    
     }
 };
