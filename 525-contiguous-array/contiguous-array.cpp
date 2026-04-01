@@ -3,37 +3,20 @@ public:
     int findMaxLength(vector<int>& nums) {
         int n=nums.size();
         unordered_map<int,int>mp;
+
+        int currSum=0;
         mp[0]=-1;
-        int sum=0;
-        int maxlen=0;
+        int result=0;
 
         for(int i=0;i<n;i++){
-            if(nums[i]==0){
-                sum+=-1;
-            }else{
-                sum+=1;
-            }
-            if(mp.find(sum)!=mp.end()){
-                maxlen=max(maxlen,i-mp[sum]);               
-            }else{
-                mp[sum]=i;
-            }
+            currSum+= (nums[i]==1) ? 1:-1;
+        
+        if(mp.find(currSum)!=mp.end()){
+            result=max(result,i-mp[currSum]);
+        }else{
+            mp[currSum]=i;
         }
-        return maxlen;
-        // int maxlen=0;
-        // for(int i=0;i<n;i++){
-        //     int zeros=0,ones=0;
-        //     for(int j=i;j<n;j++){
-        //         if(nums[j]==0){
-        //             zeros++;
-        //         }else{
-        //             ones++;
-        //         }
-        //         if(zeros==ones){
-        //         maxlen=max(maxlen,j-i+1);
-        //     }
-        //     }
-        // }
-        // return maxlen;
+        }
+        return result;
     }
 };
