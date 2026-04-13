@@ -10,10 +10,9 @@ public:
             if(nums[i]<0){
                 swap(maxprod,minprod);
             }
-
-                maxprod=max(nums[i],maxprod*nums[i]);
-                minprod=min(nums[i],minprod*nums[i]);
-             ans=max(ans,maxprod);
+            maxprod=max(nums[i],maxprod*nums[i]);
+            minprod=min(nums[i],minprod*nums[i]);
+            ans=max(ans,maxprod);
         }
         return ans;
     }
